@@ -1,0 +1,37 @@
+/* Premières méthode*/
+ALGORITHM 
+VAR
+    sentence:STRING
+    nbrcharacters: INTEGER:=0
+     nbrofwords:INTEGER :=0
+     nbrofvowels:INTEGER :=0
+BEGIN
+WHILE (sentence<>".") DO
+ nbrcharacters++
+SWITCH (sentence) DO
+    case " " : nbrofwords++
+    case "a","e","i","o","u","y" : nbrofvowels++
+END_SWITCH
+END_WHILE
+write(nbrcharacters)
+write(nbrofwords)
+write(nbrofvowels)
+END
+/*Deuxième méthode*/
+ALGORITHM 
+VAR
+     sentence:STRING
+    nbrcharacters: INTEGER:=0
+     nbrofwords:INTEGER:=0
+     nbrofvowels:INTEGER:=0
+BEGIN
+FOR i FROM 0 TO length(sentence) STEP step  DO
+     nbrcharacters++
+IF (sentence[i]=" ") THEN nbrofwords++ END_IF
+IF (sentence[i]="a","e","i","o","u","y" ) THEN nbrofvowels++END_IF   
+END_FOR
+write(nbrcharacters)
+write(nbrofwords)
+write(nbrofvowels)
+
+END
